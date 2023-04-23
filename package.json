@@ -1,0 +1,30 @@
+{
+	"name": "shamirs-secret-sharing",
+	"version": "1.0.0",
+	"description": "Shamir's Secret Sharing Scheme offline tool",
+	"scripts": {
+		"build": "npm run css:build",
+		"start": "node server.js",
+		"css": "npx tailwindcss -i ./src/css/tailwind.css -o ./src/css/main.css --watch",
+		"css:build": "npx tailwindcss -i ./src/css/tailwind.css -o ./src/css/main.css"
+	},
+	"author": "Jordan Roher",
+	"license": "MIT",
+	"main": "server.js",
+	"devDependencies": {
+		"tailwindcss": "^3.3.1"
+	},
+	"prettier": {
+		"arrowParens": "avoid",
+		"jsxBracketSameLine": true,
+		"printWidth": 120,
+		"semi": true,
+		"tabWidth": 4,
+		"trailingComma": "es5",
+		"useTabs": true
+	},
+	"dependencies": {
+		"express": "^4.18.2",
+		"prettier": "^2.8.8"
+	}
+}
