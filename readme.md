@@ -6,6 +6,11 @@ A website for splitting secrets into parts or recreating secrets from existing p
 
 <img src="./preview.jpg" alt="Screenshot of this website, showing the Split and Combine functionality" />
 
+# Docker and source code
+
+-   [Docker image](https://hub.docker.com/r/jordanroher/shamirs-secret-sharing-scheme)
+-   [Source code on GitHub](https://github.com/notclickable-jordan/shamir)
+
 # Docker compose
 
 ```yml
@@ -49,4 +54,4 @@ The text of the secret will be displayed next to the field.
 
 # License
 
-MIT, see [license](https://github.com/iancoleman/shamir/blob/master/license).
+MIT, see [license](https://github.com/iancoleman/shamir/blob/master/license) and [license2](./license2)
