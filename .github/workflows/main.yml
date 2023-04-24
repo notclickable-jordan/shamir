@@ -7,7 +7,7 @@ on:
 
 env:
   USER: jordanroher
-  REPO: shamirs-secret-sharing
+  REPO: shamirs-secret-sharing-scheme
 
 jobs:
   build:

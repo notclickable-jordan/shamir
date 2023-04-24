@@ -1,8 +1,23 @@
 # About
 
-A single page tool for splitting secrets into parts or recreating secrets from existing parts.
+A website for splitting secrets into parts or recreating secrets from existing parts.
 
-# Running
+# Preview
+
+<img src="./preview.jpg" alt="Screenshot of this website, showing the Split and Combine functionality" />
+
+# Docker compose
+
+```yml
+services:
+    shamir:
+        image: jordanroher/shamirs-secret-sharing-scheme
+        ports:
+            - 80:80
+        restart: always
+```
+
+# Running locally
 
 1. Start Tailwind
     ```bash
@@ -30,7 +45,7 @@ Gather enough parts to recreate the secret.
 
 Enter the content from each part into the field.
 
-The text of the secret will be displayed under the field.
+The text of the secret will be displayed next to the field.
 
 # License
 

@@ -1,30 +1,29 @@
-FROM nginx:latest
+# First stage: build the React app using Node.js
+FROM node:18-alpine as build-stage
+
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Second stage: serve the React app using nginx
+FROM nginx:latest-alpine
 
 ARG BUILD_DATE
 
 LABEL \
   maintainer="Jordan Roher <jordan@notclickable.com>" \
   org.opencontainers.image.authors="Jordan Roher <jordan@notclickable.com>" \
-  org.opencontainers.image.title="shamirs-secret-sharing" \
+  org.opencontainers.image.title="shamirs-secret-sharing-scheme" \
   org.opencontainers.image.description="Static site for using Shamir's Secret Sharing Scheme" \
   org.opencontainers.image.created=$BUILD_DATE
 
-WORKDIR /app
-
-COPY package.json .
-
-RUN apt-get update && apt-get install -y \
-    software-properties-common \
-    npm
-RUN npm install npm@latest -g && \
-    npm install n -g && \
-    n latest
-
-RUN npm i
-RUN npm run build
-
-COPY . .
+COPY --from=build-stage /app/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY version /
 
-EXPOSE 8080
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
