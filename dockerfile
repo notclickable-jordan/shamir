@@ -8,7 +8,7 @@ COPY . .
 RUN npm run build
 
 # Second stage: serve the React app using nginx
-FROM nginx:latest-alpine
+FROM nginx:latest
 
 ARG BUILD_DATE
 
