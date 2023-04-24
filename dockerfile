@@ -19,7 +19,7 @@ LABEL \
   org.opencontainers.image.description="Static site for using Shamir's Secret Sharing Scheme" \
   org.opencontainers.image.created=$BUILD_DATE
 
-COPY --from=build-stage /app/build /usr/share/nginx/html
+COPY --from=build-stage /app/src /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY version /
