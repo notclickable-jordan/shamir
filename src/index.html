@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full bg-gray-10">
 	<head>
 		<meta charset="utf-8" />
 		<title>Shamir Secret Sharing Scheme</title>
@@ -8,51 +8,53 @@
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 		<meta content="Jordan Roher" name="author" />
 	</head>
-	<body>
-		<div class="max-w-screen-xl mx-auto my-4">
-			<div class="text-center">
-				<h1 class="text-4xl my-2 text-slate-800">Shamir's Secret Sharing Scheme</h1>
-				<p>
-					Split your secret into parts which can be combined back into the original secret using some or all
-					of the parts
-				</p>
-			</div>
-			<div class="flex flex-wrap md:flex-nowrap my-12">
-				<div class="shrink px-4">
-					<h2 class="text-2xl text-slate-800 font-semibold">Split</h2>
-				</div>
-				<div class="grow px-4">
-					<div>
-						Require
-						<input class="required form-control" type="number" value="3" min="2" max="255" />
-						parts of
-						<input class="total form-control" type="number" value="5" min="2" max="255" />
-						to reconstruct
-					</div>
-				</div>
+	<body class="h-full bg-gray-100">
+		<div class="bg-gray-900">
+			<div class="max-w-screen-xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+				<h1 class="text-3xl text-gray-100 font-bold tracking-tight">Shamir's Secret Sharing Scheme</h1>
 			</div>
 		</div>
+		<header class="bg-white shadow">
+			<div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+				<h2 class="text-3xl font-bold tracking-tight text-gray-900">Split</h2>
+			</div>
+		</header>
+		<article class="grid grid-cols-3 gap-8 max-w-screen-xl mx-auto my-8">
+			<aside class="py-4 px-8">
+				<h3 class="text-xl font-semibold mb-4">Configuration</h3>
+				<p>
+					Require
+					<input
+						class="required form-control border border-solid rounded shadow text-center"
+						type="number"
+						value="3"
+						min="2"
+						max="255"
+					/>
+					parts of
+					<input
+						class="total form-control border border-solid rounded shadow text-center"
+						type="number"
+						value="5"
+						min="2"
+						max="255"
+					/>
+					to reconstruct
+				</p>
+			</aside>
+			<section class="col-span-2 p-4 bg-white border-solid border rounded shadow">
+				<label for="secret" class="font-semibold">Secret:</label>
+				<textarea
+					id="secret"
+					class="secret form-control border border-solid rounded shadow w-full mt-2"
+					rows="10"
+				></textarea>
+			</section>
+		</article>
+
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
-					<h1>Shamir Secret Sharing Scheme</h1>
-					<p>
-						Split your secret into parts which can be combined back into the original secret using some or
-						all of the parts.
-					</p>
-				</div>
-			</div>
-			<div class="row">
 				<div class="col-sm-6">
-					<h2>Split</h2>
-					<div>
-						Require
-						<input class="required form-control" type="number" value="3" min="2" max="255" />
-						parts from
-						<input class="total form-control" type="number" value="5" min="2" max="255" />
-						to reconstruct the following secret
-					</div>
-					<textarea class="secret form-control" rows="10" placeholder="Enter your secret here"></textarea>
 					<h2>Usage</h2>
 					<p>
 						Double click each part below to select the content for that part. Copy and paste the content for
