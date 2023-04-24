@@ -16,13 +16,13 @@
 		</div>
 		<header class="bg-white shadow">
 			<div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-				<h2 class="text-3xl font-bold tracking-tight text-gray-900">Split</h2>
+				<h2>Split</h2>
 			</div>
 		</header>
 		<article class="grid grid-cols-3 gap-8 max-w-screen-xl mx-auto my-8">
 			<aside class="py-4 px-8">
-				<h3 class="text-xl font-semibold mb-4">Configuration</h3>
-				<p>
+				<h3>Configuration</h3>
+				<p class="mb-4">
 					Require
 					<input
 						class="required form-control border border-solid rounded shadow text-center"
@@ -41,73 +41,62 @@
 					/>
 					to reconstruct
 				</p>
+				<p>
+					<label for="secret">Secret:</label>
+					<textarea
+						id="secret"
+						class="secret form-control border border-solid rounded shadow w-full mt-2 p-2"
+						rows="10"
+					></textarea>
+				</p>
+				<p class="error text-danger"></p>
 			</aside>
-			<section class="col-span-2 p-4 bg-white border-solid border rounded shadow">
-				<label for="secret" class="font-semibold">Secret:</label>
+			<section class="col-span-2 py-4 px-8 bg-white border-solid border rounded shadow">
+				<h3>Parts</h3>
+				<ol class="generated"></ol>
+			</section>
+		</article>
+		<header class="bg-white shadow">
+			<div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+				<h2>Combine</h2>
+			</div>
+		</header>
+		<article class="grid grid-cols-3 gap-8 max-w-screen-xl mx-auto my-8">
+			<section class="col-span-2 py-4 px-8">
+				<h3>Secrets</h3>
+				<p><label for="combine">One per line:</label></p>
 				<textarea
-					id="secret"
-					class="secret form-control border border-solid rounded shadow w-full mt-2"
+					id="combine"
+					class="parts form-control border border-solid rounded shadow w-full mt-2 p-2 whitespace-pre overflow-x-scroll"
 					rows="10"
 				></textarea>
 			</section>
+			<aside class="py-4 px-8 bg-white border-solid border rounded shadow">
+				<h3>Result</h3>
+				<p class="combined"></p>
+			</aside>
 		</article>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<h2>Usage</h2>
-					<p>
-						Double click each part below to select the content for that part. Copy and paste the content for
-						each part into <span class="distributesize">5</span> individual files on your computer.
-					</p>
-					<p>Distribute one file to each person in your group.</p>
-					<p>
-						If <span class="recreatesize">3</span> of those people can combine the contents of their file
-						using this page, they can view the secret.
-					</p>
-					<p>
-						Remember to delete the parts from your computer once you're finished. If you use a rubbish bin
-						for deleted files, also remove them from the rubbish bin.
-					</p>
-					<p class="error text-danger"></p>
-					<h2>Parts</h2>
-					<ol class="generated">
-						<li>Enter your secret above.</li>
-					</ol>
-				</div>
-				<div class="col-sm-6">
-					<h2>Combine</h2>
-					<p class="form-control-static">Enter the secrets, one per line</p>
-					<textarea class="parts form-control" rows="10"></textarea>
-					<h2>Result</h2>
-					<pre class="combined">Enter your parts above.</pre>
-				</div>
+		<footer class="bg-gray-900 text-gray-100 px-4 py-8">
+			<div class="max-w-screen-xl mx-auto flex flex-wrap md:flex-nowrap justify-between">
+				<ul>
+					<li>
+						<a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing"
+							>Shamir's Secret Sharing Scheme on Wikipedia</a
+						>
+					</li>
+					<li>
+						<a href="https://github.com/grempe/secrets.js"
+							>SSSS javascript library by amper5and and Glenn Rempe</a
+						>
+					</li>
+				</ul>
+				<ul>
+					<li><a href="https://github.com/iancoleman/shamir">Original project source code</a></li>
+					<li>Modified (current) project source code</li>
+				</ul>
 			</div>
-			<hr />
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="sources">
-						<h2>Sources</h2>
-						<p>
-							<a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">Wikipedia entry</a> for
-							shamir secret sharing scheme.
-						</p>
-						<p>This project is 100% open-source code.</p>
-						<p><a href="https://github.com/iancoleman/shamir">Project source code</a></p>
-						<p>
-							<a href="https://github.com/grempe/secrets.js"
-								>SSSS javascript library by amper5and and Glenn Rempe</a
-							>
-						</p>
-						<p><a href="https://getbootstrap.com/">Bootstrap stylesheet</a></p>
-						<h2>Offline Usage</h2>
-						<p>This tool has been designed to be used offline.</p>
-						<p>In your browser, select file save-as, and save this page as a file.</p>
-						<p>Double-click that file to open it in a browser on any offline computer.</p>
-					</div>
-				</div>
-			</div>
-		</div>
+		</footer>
 		<script src="js/secrets.js"></script>
 		<script src="js/selector.js"></script>
 		<script src="js/app.js"></script>

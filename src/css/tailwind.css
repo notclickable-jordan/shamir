@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a {
+	text-decoration: underline;
+}
+
+h2 {
+	@apply text-3xl font-bold tracking-tight text-gray-900;
+}
+
+h3 {
+	@apply text-xl font-semibold mb-4;
+}
+
+ol.generated {
+	@apply list-decimal px-8;
+}
+
+li.part {
+	@apply break-all p-2 border-solid border-b;
+}
+
+li.part:nth-child(even) {
+	@apply bg-gray-100;
+}
+
+label {
+	@apply font-semibold;
+}
